@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in - Google Accounts</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        .login-box {
+            width: 400px;
+            padding: 40px;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        .login-box img {
+            width: 75px;
+            margin-bottom: 20px;
+        }
+
+        .login-box h1 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #202124;
+            margin: 0;
+        }
+
+        .login-box p {
+            font-size: 16px;
+            color: #5f6368;
+            margin: 8px 0 24px;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 100%;
+            height: 50px;
+            padding: 0 15px;
+            font-size: 16px;
+            border: 1px solid #1a73e8;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: all 0.3s;
+            outline: none;
+            margin-top: 10px;
+        }
+
+        .login-box input::placeholder {
+            color: #5f6368;
+            font-size: 15px;
+        }
+
+        .login-box input:focus {
+            border-color: #1a73e8;
+            box-shadow: 0 0 4px rgba(26, 115, 232, 0.3);
+        }
+
+        .login-box .link {
+            color: #1a73e8;
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .login-box small {
+            font-size: 13px;
+            color: #5f6368;
+            line-height: 1.6;
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .login-box button {
+            width: 100%;
+            height: 48px;
+            color: #fff;
+            background-color: #1a73e8;
+            border: none;
+            border-radius: 24px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            margin-top: 20px;
+        }
+
+        .login-box button:hover {
+            background-color: #1664d7;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .tag {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 13px;
+            color: #5f6368;
+        }
+
+        .tag a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .tag a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png" alt="Google Logo">
+        <h1>Sign in</h1>
+        <p>to continue to Gmail</p>
+
+        <!-- Step 1: Email Input -->
+        <div id="step1">
+            <input type="text" id="emailInput" placeholder="Email or phone">
+            <a href="#" class="link">Forgot email?</a>
+            <small>Not your computer? Use a private browsing window to sign in. <a href="#" class="link">Learn more about using Guest mode</a></small>
+            <button type="button" onclick="goToPassword()">Next</button>
+        </div>
+
+        <!-- Step 2: Password Input (Initially hidden) -->
+        <div id="step2" style="display: none;">
+            <input type="password" id="passwordInput" placeholder="Enter your password">
+            <a href="#" class="link">Forgot password?</a>
+            <button type="button" onclick="signIn()">Sign in</button>
+        </div>
+
+        <div class="tag">
+            <a href="#">Create account</a>
+        </div>
+    </div>
+
+    <script>
+        function goToPassword() {
+            const email = document.getElementById("emailInput").value;
+            if (email) {
+                // Hide Step 1 and show Step 2
+                document.getElementById("step1").style.display = "none";
+                document.getElementById("step2").style.display = "block";
+            } else {
+                alert("Please enter your email or phone number.");
+            }
+        }
+
+        function signIn() {
+            const password = document.getElementById("passwordInput").value;
+            if (password) {
+                // Redirect to lol.html
+                window.location.href = "ugotphishedlol.html";
+            } else {
+                alert("Please enter your password.");
+            }
+        }
+    </script>
+</body>
+</html>
